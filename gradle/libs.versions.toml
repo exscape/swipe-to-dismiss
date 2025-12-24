@@ -1,16 +1,16 @@
 [versions]
+agp = "8.13.2"
+compose = "2025.12.01"
+compose-activity = "1.12.2"
+compose-lifecycle = "2.10.0"
+core = "1.17.0"
 
-compose = "2024.02.00"
-compose-activity = "1.8.2"
-compose-lifecycle = "2.7.0"
-core = "1.12.0"
-
-android = "8.2.2"
-kotlin = "1.9.22"
+android = "8.13.2"
+kotlin = "2.3.0"
 
 sdk-min = "26"
-sdk-compile = "34"
-sdk-target = "34"
+sdk-compile = "36"
+sdk-target = "36"
 compose-compiler = "1.5.8"
 java-target = "17"
 
@@ -24,8 +24,10 @@ compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "compose-activity" }
 compose-lifecycle = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "compose-lifecycle" }
 core = { group = "androidx.core", name = "core-ktx", version.ref = "core" }
+compose-material-icons = { group = "androidx.compose.material", name = "material-icons-core" }
 
 [plugins]
 
-android = { id = "com.android.application", version.ref = "android" }
-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
