@@ -91,13 +91,10 @@ class MainActivity : ComponentActivity() {
         val state = rememberSwipeToDismissBoxState()
         val currentOnDelete by rememberUpdatedState(onDelete)
 
-        LaunchedEffect(state) {
-            snapshotFlow {
-                state.settledValue
-            }.collect { settledValue ->
-                if (settledValue == SwipeToDismissBoxValue.EndToStart) {
-                    currentOnDelete(item)
-                }
+        LaunchedEffect(state.settledValue) {
+            if (state.settledValue == SwipeToDismissBoxValue.EndToStart) {
+                currentOnDelete(item)
+                state.reset()
             }
         }
 
